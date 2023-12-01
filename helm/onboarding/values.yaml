@@ -1,0 +1,13 @@
+rbac:
+ role: 
+   createRoles: true
+   name: acx-service
+
+ serviceAccount:
+    Name: acx-service
+    iamRole: arn:aws:1231241:role/acx-service-read
+
+Namespace:
+  Name: acx-service
+  linkerdInject: true
+
