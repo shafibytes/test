@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: acx-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: onboarding
+    repoURL: https://github.com/shafibytes/test.git/helm
+    targetRevision: HEAD
+    helm:
+      releaseName: acx-service-onboard
+      valuesObject:
+        rbac:
+          role: 
+           createRoles: true
+           name: acx-service
+
+          serviceAccount:
+            Name: acx-service
+            iamRole: arn:aws:1231241:role/acx-service-read
+
+          Namespace:
+            Name: acx-service
+            linkerdInject: true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
