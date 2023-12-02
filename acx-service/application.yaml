@@ -11,18 +11,8 @@ spec:
    targetRevision: HEAD
    helm:
       releaseName: acx-service-onboard
-      valuesObject:
-        rbac:
-          role: 
-           createRoles: true
-           name: acx-service
-
-          serviceAccount:
-            Name: acx-service
-            iamRole: arn:aws:12:role/acx-service-read
-        Namespace:
-          Name: acx-service
-          linkerdInject: false
+      valueFiles:
+      - values-acx-service.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: acx-services
