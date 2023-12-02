@@ -15,7 +15,7 @@ spec:
       - values-acx-service.yaml
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: acx-services
+    namespace: acx-service
 
   syncPolicy:
     automated:
