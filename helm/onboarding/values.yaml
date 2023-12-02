@@ -9,5 +9,5 @@ rbac:
 
 Namespace:
   Name: 
-  linkerdInject: 
+  linkerdInject: true
 
