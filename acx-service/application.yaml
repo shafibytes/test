@@ -12,7 +12,10 @@ spec:
    helm:
       releaseName: acx-service-onboard
       valueFiles:
-      - values-acx-service.yaml
+      - $values/acx-service/values-acx-service.yaml
+  repoURL: https://github.com/shafibytes/test.git
+  targetRevision: HEAD
+  ref: values
   destination:
     server: "https://kubernetes.default.svc"
     namespace: acx-service
