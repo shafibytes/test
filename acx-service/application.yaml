@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    chart: onboarding
-    repoURL: https://github.com/shafibytes/test.git/helm
+    repoURL: https://github.com/shafibytes/test.git
+    path: helm/onboarding
     targetRevision: HEAD
     helm:
       releaseName: acx-service-onboard
@@ -23,10 +23,10 @@ spec:
 
           Namespace:
             Name: acx-service
-            linkerdInject: true
+            linkerdInject: false
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: default
+    namespace: acx-services
 
   syncPolicy:
     syncOptions:
